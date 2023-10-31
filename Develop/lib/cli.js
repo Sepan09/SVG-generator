@@ -45,7 +45,7 @@ inquirer
       const svg = new SVG(answers.text,answers.textColor,shape.render())
       fs.writeFile('./logo.svg', svg.rendSVG(), (err) =>
       err ? console.log(err) : console.log('Success') )
-    })
+    }) 
     // TODO: Create a shape object based on inquirer data
     
     // TODO: Create a svg object and set text and textColor using user Data
