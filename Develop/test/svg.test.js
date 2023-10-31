@@ -1,24 +1,24 @@
-const SVG = require("./svg");
-const { Square } = require("./shapes");
+const SVG = require("../lib/svg");
+const { Square } = require("../lib/shapes");
 
 describe("SVG", () => {
   it("should render a 300 x 200 svg element", () => {
     const expectedSvg =
       '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"></svg>';
-
-
+  const svg = new SVG();
+  expected(svg.rendSVG()).toEqual(expectedSvg);
   });
 
   it("should append text element", () => {
     const expectedSvg =
-      '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><text x="150" y="125" font-size="60" text-anchor="middle" fill="white">A</text></svg>';
+      `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.text_color}">${this.text}</text></svg>`;
 
 
   });
 
   it("should set text message and color", () => {
     const expectedSvg =
-      '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><text x="150" y="125" font-size="60" text-anchor="middle" fill="#333">SVG</text></svg>';
+      `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.text_color}">${this.text}</text></svg>`;
 
 
   });
